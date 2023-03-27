@@ -3,7 +3,7 @@
 const drivers = ['Bobby', 'Sammy', 'Sally', 'Annette', 'Sarah', 'Bobby']
 
    function findMatching(drivers, name){
-    return drivers.filter(driver => driver ===name)
+    return drivers.filter(driversName => driversName ===name)
 
    }
 
@@ -12,20 +12,20 @@ const drivers = ['Bobby', 'Sammy', 'Sally', 'Annette', 'Sarah', 'Bobby']
 
 
    function findMatching(drivers, name) {
-    return drivers.filter(driver => driver.toLowerCase() === name.toLowerCase());
+    return drivers.filter(driversName => driversName.toLowerCase() === name.toLowerCase());
   }
   console.log(findMatching(drivers, 'Bobby'))
 
 
   function fuzzyMatch (drivers, letters){
-    return drivers.filter(driver => driver ===letters)
-
+  let matches = drivers.filter(driversName=>driversName.slice(0, letters.length)===letters)
+return matches
    }
 
-   console.log(fuzzyMatch(drivers, 'Sa'))  
 
+function matchName (drivers, name){
+  return drivers.filter(driversName => driversName.name ===name)
 
-   function matchName (){
-
-    
-   }
+}
+console.log(matchName(drivers, 'Bobby'))
+   
